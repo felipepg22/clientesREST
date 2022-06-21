@@ -66,4 +66,4 @@ class User(Resource):
         global usuarios
         usuarios = [user for user in usuarios if user["id"] != id]
         msg = {"msg": "{} deletado.".format(id)}
-        return msg, 20
+        return msg, 200
