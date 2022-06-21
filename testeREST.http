@@ -1,2 +1,5 @@
 ### GET - Lista todos os usuários
 http://127.0.0.1:5000/user/0
+
+### GET - Valida CPF
+http://127.0.0.1:5000/validaCPF/11111111111
