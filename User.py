@@ -31,11 +31,13 @@ class User(Resource):
             msg = {"msg": "Usuário não encontrado"}
             return msg, 404
 
-    def post(self, id):
-        parser = reqparse.RequestParser()
+    def post(self, id):       
+        parser = reqparse.RequestParser()       
+        
         parser.add_argument("nome")
-        parser.add_argument("idade")
-        args = parser.parse_args()
+        parser.add_argument("idade")           
+        args = parser.parse_args()        
+       
         for user in usuarios:
             if(id == user["id"]):
                 msg = {"msg": "Usuário com id {} já existe".format(id)}

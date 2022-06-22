@@ -1,0 +1,85 @@
+<h1>REST - Python FLASK</h1>
+<div id="botoes">
+    <button id="buscar">Buscar Usuário</button>
+    <br>
+    <button id="cadastrar">Cadastrar Usuário</button>
+    <br>
+    <button id="atualizar">Atualizar Usuário</button>
+    <br>
+    <button id="deletar">Deletar Usuário</button>
+</div>
+<div id="busca">
+    <form id="busca-usuario">
+        <label>Id:</label>
+        <input name="id" type="text">        
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<div id="cadastro">
+    <form id="cadastro-usuario">
+        <label>Id:</label>
+        <input name="id" type="text">
+        <label>Nome:</label>
+        <input name="nome" type="text">
+        <label>Idade:</label>
+        <input name="idade" type="text">
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<div id="atualiza">
+    <form id="atualiza-usuario">
+        <label>Id:</label>
+        <input name="id" type="text">
+        <label>Nome:</label>
+        <input name="nome" type="text">
+        <label>Idade:</label>
+        <input name="idade" type="text">
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<div id="deleta">
+    <form id="deleta-usuario">
+        <label>Id:</label>
+        <input name="id" type="text">        
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="REST_Client.js"></script>
+<script>
+
+    $('#busca').hide();
+    $('#cadastro').hide();
+    $('#atualiza').hide();
+    $('#deleta').hide();
+
+    $(document).ready(function(e){
+
+
+        $('#buscar').click(function(){
+            
+            $('#botoes').hide();
+            $('#busca').show();
+        })
+
+        $('#cadastrar').click(function(){
+            
+            $('#botoes').hide();
+            $('#cadastro').show();
+        })
+
+        $('#atualizar').click(function(){
+            
+            $('#botoes').hide();
+            $('#atualiza').show();
+        })
+
+        $('#deletar').click(function(){
+            
+            $('#botoes').hide();
+            $('#deleta').show();
+        })
+    })
+</script>
