@@ -7,6 +7,8 @@
     <button id="atualizar">Atualizar Usuário</button>
     <br>
     <button id="deletar">Deletar Usuário</button>
+    <br>
+    <button id="validar">Validar CPF</button>
 </div>
 <div id="busca">
     <form id="busca-usuario">
@@ -44,6 +46,15 @@
         <button type="submit">Enviar</button>
     </form>
 </div>
+<div id="valida">
+    <form id="valida-cpf">
+        <label>CPF:</label>
+        <input maxlength="11" minlength="11" name="cpf" type="text">        
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+<div id="resposta"></div>
 
 
 <script src="jquery-3.6.0.min.js"></script>
@@ -54,6 +65,7 @@
     $('#cadastro').hide();
     $('#atualiza').hide();
     $('#deleta').hide();
+    $('#valida').hide();
 
     $(document).ready(function(e){
 
@@ -80,6 +92,12 @@
             
             $('#botoes').hide();
             $('#deleta').show();
+        })
+
+        $('#validar').click(function(){
+            
+            $('#botoes').hide();
+            $('#valida').show();
         })
     })
 </script>

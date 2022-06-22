@@ -1,4 +1,5 @@
 const url = "http://127.0.0.1:5000/user/";
+const urlCPF = "http://127.0.0.1:5000/validaCPF/";
 
 $('#busca-usuario').submit(function(e){
 
@@ -8,7 +9,7 @@ $('#busca-usuario').submit(function(e){
 
     $.get(url +  id.trim()).done(function(response){
 
-        console.log(response);
+        $('#resposta').html(JSON.stringify(response));
     })
    
 })
@@ -32,7 +33,7 @@ $('#cadastro-usuario').submit(function(e){
    
   }).done(function(response){
 
-    console.log(response);
+    $('#resposta').html(JSON.stringify(response));
   });
    
 })
@@ -56,7 +57,7 @@ $('#atualiza-usuario').submit(function(e){
    
   }).done(function(response){
 
-    console.log(response);
+    $('#resposta').html(JSON.stringify(response));
   });
    
 })
@@ -78,7 +79,23 @@ $('#deleta-usuario').submit(function(e){
    
   }).done(function(response){
 
-    console.log(response);
+    $('#resposta').html(JSON.stringify(response));
   });
    
+})
+
+$('#valida-cpf').submit(function(e){
+
+  e.preventDefault();
+
+ let cpf = $("#valida-cpf input[name='cpf']").val();
+
+  $.get(urlCPF +  cpf.trim()).done(function(response){
+
+      $('#resposta').html(JSON.stringify(response));
+  }).catch(function(err){
+
+    $('#resposta').html('false');
+  })
+ 
 })
