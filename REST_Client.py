@@ -1,7 +1,7 @@
 import requests
 base_url = "http://localhost:5000/user/%s"
 while True:
-    operacao = input("Escolha uma operação (GET, POST, PUT, DELETE, SAIR): ")
+    operacao = input("Escolha uma operação (GET, POST, PUT, DELETE, VALIDACPF, SAIR): ")
     if operacao.upper() == "GET":
         print(">>> GET <<<")
         id = input("Id: ")
@@ -30,6 +30,12 @@ while True:
         print(">>> DELETE <<<")
         id = input("Id: ")
         response = requests.delete(base_url % id)
+        print(response.json())
+        print("HTTP Code: %s" % response.status_code)
+    elif operacao.upper() == "VALIDACPF":
+        print(">>> VALIDACPF <<<")
+        cpf = input("Cpf: ")
+        response = requests.get("http://127.0.0.1:5000/validaCPF/" + cpf)
         print(response.json())
         print("HTTP Code: %s" % response.status_code)
     else:
