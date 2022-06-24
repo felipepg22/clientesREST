@@ -3,3 +3,21 @@ http://127.0.0.1:5000/user/0
 
 ### GET - Valida CPF
 http://127.0.0.1:5000/validaCPF/11111111111
+
+### POST - Cadastra usuário
+POST http://127.0.0.1:5000/user/4 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "felipe",
+    "idade": 10
+}
+
+### PUT - Atualiza usuário
+PUT http://127.0.0.1:5000/user/2 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "josé",
+    "idade": 10
+}
